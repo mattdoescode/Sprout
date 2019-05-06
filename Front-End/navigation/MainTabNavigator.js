@@ -4,6 +4,7 @@ import {
   createStackNavigator,
   createMaterialTopTabNavigator
 } from "react-navigation";
+import {Image, StyleSheet} from 'react-native';
 
 import TabBarIcon from "../components/TabBarIcon";
 import MatchScreen from "../screens/MatchScreen";
@@ -34,6 +35,12 @@ const MessagesStack = createStackNavigator({
 
 MessagesStack.navigationOptions = {
   tabBarLabel: "Messages",
+  // headerBackground: (
+  //   <Image
+  //    style={StyleSheet.absoluteFill}
+  //     source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg' }}
+  //   />
+  // ),
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -59,7 +66,7 @@ ProfileStack.navigationOptions = {
 const tabNavigatorConfig = {
   tabBarOptions: {
     style: {
-      backgroundColor: "mediumseagreen",
+      backgroundColor: "gray",
       height: 70
     },
     labelStyle: {

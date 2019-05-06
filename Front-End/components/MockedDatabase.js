@@ -48,9 +48,9 @@ export const getRandomQuestion = user => {
 export var Users = [
   {
     id: 0,
-    username: "Admin",
+    username: "a",
     email: "sproutadmin@gmail.com",
-    password: Base64.encode("Admin"),
+    password: Base64.encode("a"),
     firstName: "Sprout",
     lastName: "Inc.",
     gender: "",
