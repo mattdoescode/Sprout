@@ -5,6 +5,7 @@ import LikeButton from "../components/MatchScreen/LikeButton";
 import DislikeButton from "../components/MatchScreen/DislikeButton";
 import { Users } from "../components/MockedDatabase";
 import BioSection from "../components/ProfileScreen/BioSection";
+import Name from "../components/MatchScreen/Name";
 
 const styles = StyleSheet.create({
   container: {
@@ -90,6 +91,7 @@ export default class MatchScreen extends React.Component {
           style={styles.container}
           contentContainerStyle={styles.contentContainer}
         >
+        <Name user={this.state.OtherUsers[this.state.OtherUsersIndex]}/>
           <IceBreaker
             user={this.state.OtherUsers[this.state.OtherUsersIndex]}
             compareAnswers={true}

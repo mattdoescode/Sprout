@@ -6,17 +6,16 @@ import ErrorMessage from "../ErrorMessage";
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: "lightgreen",
+    backgroundColor: "#cccccc",
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     margin: 10,
-    borderRadius: 40
+    borderRadius: 200
   },
   buttonText: {
     fontSize: 35,
-    color: "black"
   }
 });
 
@@ -57,7 +56,7 @@ class LikeButton extends Component {
           style={styles.buttonContainer}
           onPress={this.handlePress}
         >
-          <Icon name="heart" type="font-awesome" color="white" size={50} />
+          <Icon name="heart" type="font-awesome" color="#00ff82" size={50} />
         </TouchableOpacity>
         <ErrorMessage
           visible={this.state.error}

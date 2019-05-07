@@ -7,7 +7,7 @@ import {
 } from "react-native";
 const styles = StyleSheet.create({
   container:{
-      fontSize: 36,
+      fontSize: 28,
       opacity: 0.9,
       paddingTop: 15,
       paddingLeft: 20,
@@ -21,7 +21,7 @@ class Name extends Component {
     return (
       <View >
         <Text style={styles.container}>
-            Update Profile:
+          {this.props.user.firstName}
         </Text>
       </View>
     );

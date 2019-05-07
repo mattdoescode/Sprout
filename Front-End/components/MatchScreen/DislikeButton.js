@@ -4,17 +4,16 @@ import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: "#f9524d",
+    backgroundColor: "#dddddd",
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     margin: 10,
-    borderRadius: 40
+    borderRadius: 200
   },
   buttonText: {
     fontSize: 35,
-    color: "black"
   }
 });
 
@@ -29,7 +28,7 @@ class LikeButton extends Component {
         style={styles.buttonContainer}
         onPress={this.handlePress}
       >
-        <Icon name="times" type="font-awesome" color="white" size={50} />
+        <Icon name="times" type="font-awesome" color="black" size={50} />
       </TouchableOpacity>
     );
   }
