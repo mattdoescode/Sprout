@@ -4,7 +4,8 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  View
+  View,
+  Text
 } from "react-native";
 import { Avatar, Button, Card, Icon } from "react-native-paper";
 import { scaledSize } from "../ScaledSize";
@@ -14,12 +15,12 @@ const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   editButtonContainer: {
-    alignItems: "flex-end"
+    color: "blue"
   },
   cardContainer: {
     height: height * 0.3,
     width: width * 0.86,
-    backgroundColor: "lightgreen",
+    backgroundColor: "#CCCCCC",
     display: "flex",
     flexDirection: "column"
   },
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
   bioContainer: {
     flexGrow: 2,
     justifyContent: "center",
-    alignItems: "flex-start",
+    
     borderBottomColor: "white",
     borderBottomWidth: 0.5,
     maxHeight: height * 0.3 * 0.75
@@ -38,6 +39,19 @@ const styles = StyleSheet.create({
   bio: {
     paddingHorizontal: width * 0.01,
     fontSize: scaledSize(18)
+  },
+  circle: {
+    backgroundColor: "#cccccc",
+    borderRadius: 50,
+  },
+  header : {
+    fontSize: 28,
+    alignItems: "flex-start",
+  },
+  head : {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    display: "flex"
   }
 });
 
@@ -61,7 +75,7 @@ class BioSection extends Component {
     //conditional rendering
     const editButton = this.props.editable ? (
       <View style={styles.editButtonContainer}>
-        <Button onPress={this.handleEditButton}>
+        <Button color="#00ff82" onPress={this.handleEditButton}>
           {this.state.editing ? "done" : "edit"}
         </Button>
       </View>
@@ -71,12 +85,17 @@ class BioSection extends Component {
 
     return (
       <View style={styles.container}>
-        {editButton}
+        <View style={styles.head}>
+          <Text style={styles.header}>
+            Bio
+          </Text>
+          <View style={styles.circle}>
+           {editButton}
+          </View>
+        </View>
         <Card style={styles.cardContainer}>
           <Card.Title
             title={this.props.user.firstName}
-            subtitle="Bio"
-            left={props => <Avatar.Icon {...props} icon="person" />}
           />
           <Card.Content>
             <TextInput

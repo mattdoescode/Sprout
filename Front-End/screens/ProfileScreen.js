@@ -3,13 +3,15 @@ import { AsyncStorage, StyleSheet, ScrollView, View } from "react-native";
 import SignOutButton from "../components/ProfileScreen/SignOutButton";
 import IceBreaker from "../components/ProfileScreen/IceBreaker";
 import BioSection from "../components/ProfileScreen/BioSection";
+import Name from "../components/ProfileScreen/Name";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Users } from "../components/MockedDatabase";
 
 const styles = StyleSheet.create({
   scollContainer: {
     flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
+    backgroundColor: "#e6e6e6",
   }
 });
 
@@ -52,6 +54,7 @@ export default class ProfileScreen extends React.Component {
     return (
       <KeyboardAwareScrollView style={styles.scollContainer}>
         <View keyboardShouldPersistTaps={"always"}>
+          <Name />
           <BioSection user={this.state.user} editable={true} />
           <IceBreaker user={this.state.user} editable={true} />
           <SignOutButton signOutFunction={this._signOut} />

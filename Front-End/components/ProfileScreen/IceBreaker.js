@@ -4,7 +4,8 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  View
+  View,
+  Text
 } from "react-native";
 import { Button, Card } from "react-native-paper";
 import { scaledSize } from "../ScaledSize";
@@ -15,12 +16,12 @@ const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   editButtonContainer: {
-    alignItems: "flex-end"
+    alignItems: "flex-end",
   },
   cardContainer: {
     height: height * 0.3,
     width: width * 0.86,
-    backgroundColor: "lightgreen",
+    backgroundColor: "#cccccc",
     display: "flex",
     flexDirection: "column"
   },
@@ -61,10 +62,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderColor: "white",
     borderWidth: 0.5,
-    backgroundColor: "lightgreen"
+    backgroundColor: "#00ff82"
   },
   answerText: {
     fontSize: scaledSize(22) //scaledSize() automatically changes the font size if the screen is bigger or smaller
+  },
+  circle: {
+    backgroundColor: "#cccccc",
+    borderRadius: 50,
+  },
+  header : {
+    fontSize: 28,
+    alignItems: "flex-start",
+  },
+  head : {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    display: "flex"
   }
 });
 
@@ -212,7 +226,7 @@ class IceBreaker extends Component {
     //conditional rendering
     const editButton = this.props.editable ? (
       <View style={styles.editButtonContainer}>
-        <Button onPress={this.handleEditButton}>
+        <Button color="#00ff82" onPress={this.handleEditButton}>
           {this.state.editing ? "done" : "edit"}
         </Button>
       </View>
@@ -222,7 +236,14 @@ class IceBreaker extends Component {
 
     return (
       <View style={styles.container}>
-        {editButton}
+        <View style={styles.head}>
+          <Text style={styles.header}>
+            Ice Breaker 
+          </Text>
+          <View style={styles.circle}>
+           {editButton}
+          </View>
+        </View>
         <Card style={styles.cardContainer}>
           <Card.Content style={styles.questionContainer}>
             <TextInput
