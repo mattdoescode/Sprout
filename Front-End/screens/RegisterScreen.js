@@ -261,7 +261,9 @@ class RegisterScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+  
+  },
   textInput: {
     marginBottom: 20,
     height: 40,
@@ -274,7 +276,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     flexDirection: "column",
-    backgroundColor: "mediumseagreen"
+    backgroundColor: "#f4f4f4"
   },
   pickerContainer: {
     display: "flex",

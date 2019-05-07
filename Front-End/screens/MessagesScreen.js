@@ -27,9 +27,18 @@ export default class MessagesScreen extends React.Component {
   };
 
   render() {
+    const display = this.state.matchedIds ? (
+      <Text style={{ textAlign: "center" }}>You haven't matched with anyone yet </Text>
+    ):(
+      <>
+        <Text style={{ textAlign: "center" }}>People you matched with: </Text>
+      </>
+    );
     return (
       <ScrollView style={styles.container}>
-        <Text style={{ textAlign: "center" }}>People you matched with: </Text>
+    
+        {display}    
+
         {this.state.matchedIds.map(id => {
           return (
             <Text style={{ textAlign: "center" }} key={id}>
@@ -46,6 +55,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 15,
-    backgroundColor: "#fff"
+    backgroundColor: "#f4f4f4"
   }
 });
