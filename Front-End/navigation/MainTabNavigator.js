@@ -12,7 +12,7 @@ import MessagesScreen from "../screens/MessagesScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 const MatchStack = createStackNavigator({
-  Match: MatchScreen
+  Match: MatchScreen,
 });
 
 MatchStack.navigationOptions = {
@@ -66,12 +66,21 @@ ProfileStack.navigationOptions = {
 const tabNavigatorConfig = {
   tabBarOptions: {
     style: {
-      backgroundColor: "gray",
+      backgroundColor: "#AAAAAA",
       height: 70
     },
     labelStyle: {
       marginTop: 30
-    }
+    },
+    headerTitleStyle: {
+
+    },
+    headerStyle: {
+       
+    },
+   headerTintColor: {
+      /*  */
+   },
   }
 };
 
